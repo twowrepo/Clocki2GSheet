@@ -1,4 +1,7 @@
+![Clocki2GSheet Icon](icon.png)
+
 # Clocki2GSheet
+
 
 App desktop per macOS che consente di esportare i dati mensili da Clockify a Google Sheets, organizzati per tab mensile (`YYYY-MM`).
 Semplice interfaccia grafica basata su Tkinter, nessun terminale richiesto.
