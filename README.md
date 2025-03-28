@@ -1,19 +1,20 @@
-![Clocki2GSheet Icon](icon.png)
+<p align="center">
+  <img src="icon.png" alt="Clocki2GSheet Icon" width="200"/>
+</p>
 
 # Clocki2GSheet
 
+Clocki2GSheet is a desktop app for macOS that exports monthly data from Clockify to Google Sheets, organized in monthly tabs (`YYYY-MM`).  
+It features a simple GUI built with Tkinter—no terminal needed.
 
-App desktop per macOS che consente di esportare i dati mensili da Clockify a Google Sheets, organizzati per tab mensile (`YYYY-MM`).
-Semplice interfaccia grafica basata su Tkinter, nessun terminale richiesto.
+## ✅ Features
 
-## ✅ Funzionalità
+- Export Clockify time entries for a specific month and year
+- Create (or update) a dedicated tab for each month in the target Google Sheet
+- Authenticate using a Google Service Account (no OAuth flow)
+- External configuration file, editable even after compiling the app
 
-- Esporta i time entries di Clockify per un mese/anno specifico
-- Crea (o aggiorna) un tab per ogni mese nel Google Sheet target
-- Si autentica via Service Account Google (no OAuth)
-- Configurazione esterna e modificabile anche dopo la compilazione
-
-## 📁 Struttura dei file
+## 📁 File Structure
 
 ```
 Clocki2GSheet.app/
@@ -21,9 +22,9 @@ config.py
 service_account.json
 ```
 
-## ⚙️ Configurazione
+## ⚙️ Configuration
 
-Crea un file `config.py` nella stessa cartella della `.app`, con le seguenti variabili:
+Create a `config.py` file in the same folder as the `.app`, with the following variables:
 
 ```python
 CLOCKIFY_API_KEY = "xxx"
@@ -31,20 +32,20 @@ CLOCKIFY_WORKSPACE_ID = "xxx"
 GOOGLE_SHEET_EXPORT_FILE_ID = "xxx"
 ```
 
-Copia accanto anche il file `service_account.json` del tuo Service Account Google.
+Place the `service_account.json` file from your Google Service Account in the same folder.
 
-Assicurati che il file Google Sheet e la cartella Drive siano **condivisi** con l'email del Service Account.
+Ensure that both the Google Sheet file and its containing Drive folder are **shared with the Service Account email**.
 
-## 🚀 Esecuzione
+## 🚀 How to Run
 
-1. Fai doppio clic sull'app `Clocki2GSheet.app`
-2. Inserisci l'anno e il mese da esportare
-3. Clicca "Esporta"
-4. I dati verranno scritti nel tab `"YYYY-MM"` del Google Sheet
+1. Double-click the `Clocki2GSheet.app`
+2. Enter the desired month and year
+3. Click "Export"
+4. Data will be written into the `"YYYY-MM"` tab of the configured Google Sheet
 
-## 🧱 Per sviluppatori (compilare .app)
+## 🧱 For Developers (Build the .app)
 
-### 1. Crea ambiente
+### 1. Create Virtual Environment
 
 ```bash
 python3 -m venv venv
@@ -52,13 +53,13 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 2. Compila `.app`
+### 2. Build the App
 
 ```bash
 pyinstaller --windowed clockify_export_gui.py --name "Clocki2GSheet"
 ```
 
-### 3. Struttura finale per la distribuzione
+### 3. Final Distribution Structure
 
 ```
 dist/
@@ -67,13 +68,13 @@ dist/
 └── service_account.json
 ```
 
-**Non serve build con `--onefile`**.
+**You don't need to use the `--onefile` flag.**
 
-## 🛡️ Problemi comuni
+## 🛡️ Common Issues
 
-- Se macOS blocca l'app: clic destro > Apri > "Apri comunque"
-- Se la GUI non si apre: avvia da terminale per vedere gli errori
+- If macOS blocks the app: right-click > Open > "Open Anyway"
+- If the GUI doesn't open: run the app from Terminal to see error logs
 
-## 📝 Licenza
+## 📝 License
 
 MIT
