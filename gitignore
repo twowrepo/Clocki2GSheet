@@ -1,0 +1,18 @@
+# Ambiente virtuale
+venv/
+__pycache__/
+*.pyc
+
+# PyInstaller build
+build/
+dist/
+*.spec
+
+# Configurazione e credenziali (non includerle mai nel repo!)
+config.py
+service_account.json
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
